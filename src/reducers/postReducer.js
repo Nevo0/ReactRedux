@@ -1,4 +1,4 @@
-import { FETCH_POSTS, NEV_POST } from "../actions/types";
+import { FETCH_POSTS, NEW_POST } from "../actions/types";
 
 const inirialState = {
   items: [],
@@ -16,6 +16,16 @@ export default function(state = inirialState, action) {
         ...state,
         items: action.payload
       };
+    case NEW_POST:
+      // console.log(state);
+      // console.log(action);
+      // console.log(inirialState);
+
+      return {
+        ...state,
+        item: action.payload
+      };
+
     default:
       return state;
   }
